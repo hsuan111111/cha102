@@ -9,12 +9,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 @WebServlet("/test")
 public class TestController extends HttpServlet{
-	private static final long serialVersionUID = 1L;
+	private static final long serialVersionUID = 1L; //版本號
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		var xxx = req.getParameter("xxx");
 		req.setAttribute("nickname", xxx);
+		System.out.println();
 		req.getRequestDispatcher("/index.jsp").forward(req, resp);
 	}
 	
